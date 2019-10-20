@@ -1,7 +1,7 @@
 variable "app_prefix" {
-  default = "fRrmQiPHih"
+  default = "tprc0prgxi"
 }
 
 variable "pipeline_name" {
-  default = "fRrmQiPHih"
+  default = "tprc0prgxi"
 }
