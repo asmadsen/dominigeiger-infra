@@ -5,3 +5,7 @@ variable "app_prefix" {
 variable "pipeline_name" {
   default = "tprc0prgxi"
 }
+
+variable "logztoken" {}
+
+variable "logzurl" {}

@@ -34,3 +34,27 @@ resource "heroku_pipeline_coupling" "production" {
   pipeline = "${heroku_pipeline.heroku_pipeline.id}"
   stage    = "production"
 }
+
+resource "heroku_app_config_association" "cienv" {
+  app_id = "${heroku_app.ci.id}"
+  sensitive_vars = {
+    LOGZ_TOKEN = "${var.logztoken}"
+    LOGZ_URL = "${var.logzurl}"
+  }
+}
+
+resource "heroku_app_config_association" "stagingenv" {
+  app_id = "${heroku_app.staging.id}"
+  sensitive_vars = {
+    LOGZ_TOKEN = "${var.logztoken}"
+    LOGZ_URL = "${var.logzurl}"
+  }
+}
+
+resource "heroku_app_config_association" "productionenv" {
+  app_id = "${heroku_app.production.id}"
+  sensitive_vars = {
+    LOGZ_TOKEN = "${var.logztoken}"
+    LOGZ_URL = "${var.logzurl}"
+  }
+}
